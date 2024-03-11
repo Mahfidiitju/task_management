@@ -16,10 +16,14 @@ const userSchema=mongoose.Schema({
     mobile:{
         type:String,
         required:true
+    },
+    password:{
+        type:String,
+        required:true
     }
     
-},{versionKey:false}
+},{timestamps:true,versionKey:false}
 )
 
-const userModel=mongoose.model("user",userSchema);
+const userModel=mongoose.model("User",userSchema);
 module.exports=userModel;
