@@ -17,5 +17,5 @@ const otpSchema=mongoose.Schema({
 },{timestamps:true,versionKey:false}
 )
 
-const otpModel=mongoose.model("otp",otpSchema);
+const otpModel=mongoose.model("Otp",otpSchema);
 module.exports=otpModel;

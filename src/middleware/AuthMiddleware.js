@@ -7,8 +7,8 @@ module.exports=(req,res,next)=>{
         if(err)
             res.status(401).json({status:"unauthorized"});
         else{
-            let email=success['email'];
-            req.headers.email=email;
+            let email=success['data'];
+            req.email=email;
             next();
         }
     })

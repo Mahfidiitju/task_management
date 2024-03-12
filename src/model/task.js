@@ -16,5 +16,5 @@ const taskSchema=mongoose.Schema({
 },{timestamps:true,versionKey:false}
 )
 
-const taskModel=mongoose.model("task",taskSchema);
+const taskModel=mongoose.model("Task",taskSchema);
 module.exports=taskModel;
