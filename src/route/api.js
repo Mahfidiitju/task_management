@@ -1,7 +1,7 @@
 const express=require('express');
 const userController=require('../controller/userController');
 const AuthMiddleware=require('../middleware/AuthMiddleware');
-const {createTask,updateTask,deleteTask,readTask}=require('../controller/taskController');
+const {createTask,updateTask,deleteTask,readTask,updateStatus}=require('../controller/taskController');
 const router=express.Router();
 
 
@@ -28,7 +28,10 @@ router.post("/profileUpdate",AuthMiddleware,userController.profileUpdate);
 router.post("/task/create",AuthMiddleware,createTask);
 router.post("/task/update/:id",AuthMiddleware,updateTask);
 router.get("/task/read",AuthMiddleware,readTask);
-router.get("/task/delete/:id",AuthMiddleware,deleteTask);
+router.delete("/task/delete/:id",AuthMiddleware,deleteTask);
+
+// cancel or complete mark for todo
+router.post("/task/updateStatus/:id",AuthMiddleware,updateStatus)
 
 
 module.exports=router;
